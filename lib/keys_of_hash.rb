@@ -1,6 +1,13 @@
 class Hash
   def keys_of(*arguments)
-    arguments.each do |info|
-      [arguments]
+    array = []
+    collect do |key, value|
+      if arguments.include?(value) #check value from arguments
+        array << key
+      end
     end
+    array
+  end 
 end
+
+
